@@ -1,0 +1,68 @@
+Họ tên SV: Trần Văn Cường	Mã lớp: 114175
+MSSV: 20158056				Mã HP: IT4610Q
+
+Câu hỏi 1: 
+- Các mô hình hệ phân tán khác: 
+    - Mạng internet
+    - Hệ thống tìm kiếm
+- Chúng là hệ phân tán bởi vì thỏa mãn 4 tính chất:
+    - Tính chia sẻ tài nguyên.
+    - Tính trong suốt.
+    - Tính mở.
+    - Tính co giãn.
+
+Câu hỏi 2: Tính chia sẻ tài nguyên của Hệ Phân Tán:
+Thuận lợi:
+    - Việc chia sẻ tài nguyên giúp cho việc sử dụng thuận tiện.
+    - Có quyền truy nhập thông qua các dịch vụ chia sẻ file.
+    - Dễ dàng cho phép hay truy cập tài nguyên thuận lợi hơn so với sao chép, in ấn, ...
+    
+Rủi ro:
+    - Thiếu khả năng xác thực nguồn tài nguyên chia sẻ.
+    - Nhiều rủi ro an toàn thông tin như mạo danh, phát tán thông tin sai, ...
+
+Câu hỏi 3: 
+Cân bằng giữa hiệu năng và độ trong suốt:
+    - Hiệu năng và độ trong suốt tỉ lệ nghịch với nhau.
+    - Cần phân tích từng hệ thống để có tỉ lệ cân bằng phù hợp.
+    - Vừa đảm bảo hiệu năng vừa đảm bảo tính trong suốt.
+Đưa ra ví dụ cụ thể để giải thích:
+    Hệ thống mạng Internet, 
+    - Nếu "trong suốt" quá trong việc ẩn đi quá nhiều thông tin khiến hệ thống phản hồi kém.
+    - Nếu ưu tiên hiệu năng, tính an toàn thông tin không được đảm bảo tốt.
+    ==> Cần có sự phân tích để có sự cân bằng phù hợp với từng hệ thống.
+
+
+Câu hỏi 4: 
+Sự quan trọng của Interface đối với Tính mở của Hệ Phân Tán:
+    - Giao diện Interface cho phép thực hiện thao tác với dữ liệu hệ thống 
+    - Nhưng nó cũng góp phần "ẩn" không cho phép sửa đổi dữ liệu trực tiếp
+    - Đảm bảo tính trong suốt cho hệ thống.
+
+Câu hỏi 5: 
+So sánh 2 kiểu HĐH DOS và NOS.
++---------------------------+-------------------------------------------+-------------------+
+|                           |               Distributed OS              |                   |
+|           Item            |-------------------------------------------|   Network OS      |
+|                           |       Multiproc      |    Multicomp       |                   |
+|---------------------------+----------------------+--------------------+-------------------|
+| Degree of transparency    |       Very High      |        High        |       Low         |
+|---------------------------+----------------------+--------------------+-------------------|
+| Same OS on all nodes      |           Yes        |        Yes         |       NOS         |
+|---------------------------+----------------------+--------------------+-------------------|
+| Number of copies of OS    |           1          |        N           |       Network     |
+|---------------------------+----------------------+--------------------+-------------------|
+| Basic for communication   |   Shared memory      |    Messages        |       Files       |
+|---------------------------+----------------------+--------------------+-------------------|
+| Resource management       |   Global, central    | Global, distributed|      Per node     |
+|---------------------------+----------------------+--------------------+-------------------|
+| Scalability               |           No         |    Moderately      |       Yes         |
+|---------------------------+----------------------+--------------------+-------------------|
+| Openness                  |       Closed         |       Closed       |       Openness    |
++---------------------------+-------------------------------------------+-------------------+
+
+
+Middleware là sự kết hợp ưu điểm của cả 2 mô hình:
+    - Việc sử dụng Middleware thể hiện ưu điểm hiệu năng của DOS và tính trong suốt của NOS.
+    - Middleware tăng tính trong suốt cho DOS và hiệu năng cho NOS.
+    ==> Middleware là sự kết hợp ưu điểm của cả hai mô hình DOS và NOS.

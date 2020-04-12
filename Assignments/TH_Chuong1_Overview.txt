@@ -1,0 +1,33 @@
+Họ tên SV: Trần Văn Cường	Mã lớp: 114175
+MSSV: 20158056				Mã HP: IT4610Q
+
+
+Câu 1:
+Đường dẫn đến file html chứa nội dung mặc định là:
+/var/www/html/index.html
+
+Câu 2:
+Cổng mặc định của dịch vụ www: 80
+
+Câu 3:
+Quyền 755 là user có quyền đọc, viết và chạy. 
+Nhóm của user và group có quyền đọc và chạy
+
+Câu 4:
+Nội dung của 2 file html trong thư mục test.com và example.com là nội dung mình vừa chỉnh sửa ở phần hướng dẫn trên.
+
+Câu 5:
+Sau khi chỉnh sửa config và put online thì máy khác cũng nhận được nội dung y như máy tính cá nhân của mình và được giao diện như ở câu 4.
+
+Câu 6:
+while (out != null) {
+			String message = scanner.nextLine();
+			try{
+		        out.println(message);
+		    }catch (NumberFormatException nfe){
+		        System.out.println("Your input is not a number!");
+		    }
+		}
+
+ Câu 7:
+Phương thức run đóng vai trò thực thi khi class Server được khởi động và tiến hành xử lý dữ liệu của Client tại đây
