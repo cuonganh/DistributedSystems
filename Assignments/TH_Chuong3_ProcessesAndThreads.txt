@@ -1,0 +1,29 @@
+Họ tên SV: Trần Văn Cường	Mã lớp: 114175
+MSSV: 20158056				Mã HP: IT4610Q
+
+Câu hỏi thực hành:
+
+    Câu 1: Tệp nào xuất hiện trong thư mục ChatRoomApp? Nó sử dụng để làm gì?
+    - Tệp xuất hiện trong thư mục ChatRoomApp là package.json
+    - Tệp package.json dùng để lưu các thông tin về project:
+        + name
+        + version
+        + description
+        + author
+        + license
+        ................
+    
+    Câu 2: Mở trình duyệt và gõ địa chỉ http://localhost:3000
+    Nhận được thông điệp: Hello world
+
+    Câu 3: Reload trình duyệt:
+    - Không có gì mới xuất hiện trên cửa sổ.
+    - Bởi vì trình duyệt chưa được kết nối tới server.
+
+    Câu 4: Refresh trang localhost:3000
+    Xuất hiện thông điệp: New user connected
+
+    Câu 5: Gõ gì đó trên một tab. Cùng lúc đó, nhìn sang tab khác của người dùng khác:
+    Tab của người dùng khác sẽ hiện tên người đang gõ tin nhắn.
+
+

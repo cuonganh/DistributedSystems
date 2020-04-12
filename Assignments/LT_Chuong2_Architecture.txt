@@ -1,0 +1,78 @@
+Họ tên SV: Trần Văn Cường	Mã lớp: 114175
+MSSV: 20158056				Mã HP: IT4610Q
+
+Câu 1: Mô hình kiến trúc phân tầng OSI của mạng máy tính:
+
++-----------+---------------+---------------------------------------------------------------+
+|   Tầng    |   Tên         |                   Chức năng                                   |
++-----------+---------------+---------------------------------------------------------------+
+|   7       | Application   | Cung cấp các phương tiện cho người sử dụng để truy cập mạng   |
+|           |               | và các dịch vụ phân tán                                       |
++-----------+---------------+---------------------------------------------------------------+
+|           |               | - Nhận dữ liệu từ Application layer                           |
+|     6     | Presentation  | - Chuyển đổi dạng biểu diễn của dữ liệu: ASCII <--> EBCDIC    |
+|           |               | - Mã hóa và giải mã dữ liệu                                   |
+|           |               | - Nén dữ liệu để giảm tải đường truyền                        |
++-----------+---------------+---------------------------------------------------------------+
+|           |               | - Thiết lập các phiên làm việc giữa các máy tính              |
+|     5     | Session       | - Thiết lập, quản lí và ngắt kết nối giữa các trình ứng dụng  |
+|           |               | - Giao thức này đã bao gồm các bước bắt tay thiết lạp kết nối |
++-----------+---------------+---------------------------------------------------------------+
+|           |               | - Đóng gói các dữ liệu của ứng dụng thành từng gói tin với số |
+|     4     | Transport     |   hiệu cổng tương ứng.                                        |
+|           |               | - Các giao thức tiêu biểu: TCP, UDP.                          |
++-----------+---------------+---------------------------------------------------------------+
+|           |               |  - Cung cấp quy trình truyền các gói tin ở tầng 4.            |
+|     3     | Network       |  - Các gói tin được đóng gói theo giao thức IP và được gửi đi |
+|           |               |    thông qua các router.                                      |
+|           |               |                                                               |
++-----------+---------------+---------------------------------------------------------------+
+|           |               |  - Cung cấp quy trình truyền dữ liệu, cách đánh địa chỉ vật lí|
+|    2      | Datalink      |    của các thiết bị.                                          |
+|           |               |  - Điều khiển nơi dữ liệu được gửi đến thông qua switches     |
++-----------+---------------+---------------------------------------------------------------+
+|           |               |  - Bao gồm tất cả các thiết bị phần cứng, mạch điện, ...      |
+|    1      | Physical      |  - Đảm bảo cho quá trình thiết lập, truyền dữ liệu, ngắt kết  |
+|           |               |    nối, điều khiển lưu lượng và điều chế, biến đổi dữ liệu    |
+|           |               |    giữa dạng số và liên tục                                   |
++-----------+---------------+---------------------------------------------------------------+
+
+Câu 2: Cho ví dụ và phân tích một mô hình kiến trúc publish/subscribe (thuê bao/xuất bản).
+
+
+Câu 3: Sự khác nhau giữa phân tán dọc và phân tán ngang:
++-------------------------------------------+-----------------------------------------------+
+|           Phân tán dọc                    |                   Phân tán ngang              |
++-------------------------------------------+-----------------------------------------------+
+| - Xử lí nhiều lớp trên nhiều thiết bị     | - Xử lí một lớp trên nhiều thiết bị           |
+|                                           |                                               |
+| - Tăng cường khả năng xử lí bằng cách     | - Tăng cường khả năng xử lí bằng cách nâng cấp|
+|   nâng cấp cấu hình các máy trong hệ thống|   số lượng các máy trong hệ thống             |
++-------------------------------------------+-----------------------------------------------+
+
+
+Câu 4: Phân tích ưu nhược điểm của kiến trúc tập trung và kiến trúc không tập trung.
+
++-------------------------------------------+-----------------------------------------------+
+|           Kiến trúc tập trung             |        Kiến trúc không tập trung              |
++-------------------------------------------+-----------------------------------------------+
+| - Toàn bộ CSDL được lưu ở một dàn máy tính| - Dữ liệu không lưu trữ tập trung ở một máy   |
+|   có thể bao gồm một hoặc nhiều máy được  |   mà được lưu trữ ở nhiều máy trên mạng và    |
+|    điều hành chung như một máy).          |   được tổ chức thành những CSDL con.          |
++-------------------------------------------+-----------------------------------------------+
+|  Đặc trưng:                               |   Đặc trưng:                                  |
+|- Dữ liệu được lưu trên máy tính trung tâm | - Dữ liệu có thể được lưu trữ ở nhiều CSDL con|
+|- Nhiều người dùng từ xa có thể truy cập CSDL- Có thể sử dụng dữ liệu ở nhiều nơi để truy vấn.
+|- Dữ liệu được lưu trên máy tính trung tâm | - Dữ liệu có thể được lưu trữ ở nhiều CSDL con|
++-------------------------------------------+-----------------------------------------------+
+|   Phân loại:                              |   Phân loại:                                  |
+| - Hệ CSDL cá nhân                         | - Hệ CSDL thuần nhất                          |
+| - Hệ CSDL trung tâm                       | - Hệ CSDL hỗn hợp                             |
+| - Hệ CSDL khách chủ                       |                                               |
++-------------------------------------------+-----------------------------------------------+
+
+
+Câu 5: Mạng Overlay có cấu trúc, các thông điệp được định tuyến dựa theo hình trạng mạng topology
+Nhược điểm quan trọng của hướng tiếp cận này:
+    - Kết nối trên mạng Overlay là kết nối ảo.
+    - Không tối ưu về mặt vật lí.
