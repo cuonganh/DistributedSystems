@@ -1,5 +1,5 @@
 Họ tên SV: Trần Văn Cường	Mã lớp: 114175
-MSSV: 20158056				Mã HP: IT4610Q
+MSSV: 20158056		  	Mã HP: IT4610Q
 
 Câu hỏi thực hành:
 
@@ -36,31 +36,31 @@ Câu hỏi thực hành:
 	3. Cơ chế chuyền và nhận thông điệp của Sender và Receiver:
 
 	+---------------------------------------+-----------------------------------------------+
-	| 		Sender:							|	Receiver									|
+	| 		Sender:			|		Receiver			|
 	|---------------------------------------+-----------------------------------------------|
-	|	1. Create and start connection		|1. Create and start connection					|
-	|	2. create queue session				|2. Create topic session						|
-	|	3. get the Topic object				|3. Get the Topic object						|
-	|	4. create TopicPublisher object		|4. Create TopicSubscriber						|
-	|	5. create TextMessage object		|5. Create listener object						|
-	|	6. write message					|6. Register the listener object with subscriber|
-	|	7. send message						|												|
-	|	8. connection close					|												|
+	|	1. Create and start connection	|1. Create and start connection			|
+	|	2. create queue session		|2. Create topic session			|
+	|	3. get the Topic object		|3. Get the Topic object			|
+	|	4. create TopicPublisher object	|4. Create TopicSubscriber			|
+	|	5. create TextMessage object	|5. Create listener object			|
+	|	6. write message		|6. Register the listener object with subscriber|
+	|	7. send message			|						|
+	|	8. connection close		|						|
 	+---------------------------------------+-----------------------------------------------+	
 
 	4. So sánh JMS và DDS Decentralized					
 
 	+-------------------------------------------------------+-------------------------------------------------------+
-	|						JMS:							|			DDS											|
+	|			JMS:				|			DDS				|
 	|-------------------------------------------------------+-------------------------------------------------------|
-	|- Java Messaging Service								|- Data distributed service								|
-	|- Java Mesage Oriented Middleware API					|- Decentralized										|
+	|- Java Messaging Service				|- Data distributed service				|
+	|- Java Mesage Oriented Middleware API			|- Decentralized					|
 	|- Used for sending message between two or more clients	|- DDS is networking middleware	that simplifies complex	|
-	|  														|  network programming 									|
-	|- Centrailized											|- It implements a publish/subscribe model for sending	|
+	|  							|  network programming 					|
+	|- Centrailized						|- It implements a publish/subscribe model for sending	|
 	|- Allows the communication between different components|  and receiving date, events and commands among the nodes
-	|  of a distributed application							|- Automatically handles all aspects of message delivery|
-	|- Most commenly used									|														| 
-	|- Many implementations: ActiveMQ, GlassFish, RabbitMQ	|- Automatically handles hot-swapping redundant publishers 
-	|  														|  if the primary fails									|
+	|  of a distributed application				|- Automatically handles all aspects of message delivery|
+	|- Most commenly used					|							| 
+	|- Many implementations: ActiveMQ, GlassFish, RabbitMQ	|- Automatically handles hot-swapping redundant publishers
+	|  							|  if the primary fails					|
 	+-------------------------------------------------------+-------------------------------------------------------+
