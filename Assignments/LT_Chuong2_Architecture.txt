@@ -37,7 +37,13 @@ Câu 1: Mô hình kiến trúc phân tầng OSI của mạng máy tính:
 |           |               |    giữa dạng số và liên tục                                   |
 +-----------+---------------+---------------------------------------------------------------+
 
+
 Câu 2: Cho ví dụ và phân tích một mô hình kiến trúc publish/subscribe (thuê bao/xuất bản).
+Hệ thống gửi thông báo có rò rỉ khí gas trong gia đình:
+- subscribe: tự phát báo động, gửi thông báo âm thanh hay tin nhắn.
+- publish: phát hiện có khói, nhiệt độ cao Sinh ra event báo cháy. Hệ thống thấy các subscribe 
+  đã đăng kí sẽ tự động chuyển tiếp thông tin về event kèm theo về event.
+Các subscribe sẽ tự động gửi thông báo, gửi tin nhắn tự động.
 
 
 Câu 3: Sự khác nhau giữa phân tán dọc và phân tán ngang:
@@ -76,3 +82,26 @@ Câu 5: Mạng Overlay có cấu trúc, các thông điệp được định tuy
 Nhược điểm quan trọng của hướng tiếp cận này:
     - Kết nối trên mạng Overlay là kết nối ảo.
     - Không tối ưu về mặt vật lí.
+
+
+Câu 6:
+Xét chuỗi tiến trình P1, P2, ..., Pn triển khai một kiến trúc client-server đa tầng.
+Cơ chế: 
+    - P(i) là client của tiến trình P(i+1).
+    - P(i) sẽ trả lời P(i-1) chỉ khi nhận được câu trả lời từ P(i+1).
+
+Những vấn đề xảy ra khi xem xét hiệu năng yêu cầu trả lời tới P1:
+    - P1 không thể là client của tiến trình nào vì trước nó không có tiến trình nào.
+    - Khi P1 là server của P2, nó có thể nhận được câu trả lời từ P2
+      nhưng nó không thể trả lời cho bất cứ tiến trình nào.
+    ....
+
+
+Câu 7:
+Giải thuật định tuyến đi từ nguồn tới đích này không tối ưu.
+
+Xét đường đi từ (0.2, 0.3) -> (0.9, 0.9):
+    Giải thuật sẽ chọn các điểm lân cận vì đường đi tới nó ngắn hơn.
+    Nhưng thực ra đường đi (0.2, 0.3) -> (0.6, 0.7) -> (0.9, 0.9) là đường đi tối ưu hơn
+    Trong khi thuật toán không lựa chọn do bước đi đầu tiên của nó không nhỏ nhất.
+    Nhưng tổng khoảng cách từ đầu tới cuối của nó là tối ưu nhất.
