@@ -1,0 +1,87 @@
+Họ tên SV: Trần Văn Cường	Mã lớp: 114175
+MSSV: 20158056				Mã HP: IT4610Q
+
+Câu hỏi 1: Có cần thiết phải giới hạn số lượng các luồng trong một tiến trình server?
+Cần giới hạn:
+    - Khi tạo thêm một luồng thì tiến trình phải tạo thêm một stack.
+    - Thêm bao nhiêu luồng --> bấy nhiêu stack --> tốn bấy nhiêu memory.
+    - Đến lúc nào đó sẽ vượt quá tài nguyên memory hệ thống.
+
+
+Câu hỏi 2: Có nên chỉ gắn một luồng đơn duy nhất với một tiến trình nhẹ?
+Nên:
+    - Mỗi tiến trình nhẹ chỉ gắn với một luồng đơn.
+    - Khi luồng đó gọi Blocking System Call thì nó chỉ block tiến trình đó.
+    - Không ảnh hưởng tới tiến trình khác, luồng khác.
+
+
+Câu hỏi 3: Có nên chỉ có một tiến trình nhẹ đơn gắn với một tiến trình?
+Không nên:
+    - Chỉ một tiến trình nhẹ thì không có ý nghĩa với đa luồng. 
+    - Đảm bảo khi log 1 luồng không làm log tất cả
+    - Nếu dùng 1 tiến trình nhẹ map với nhiều luồng ở trên.
+    - Không có ý nghĩa khi một luồng block sẽ block tiến trình nhẹ
+    - Và nó cũng sẽ block các luồng khác
+-> Không có ý nghĩa giải quyết vấn đề block System Call
+    - Thế nên phải phải dùng nhiều tiến trình nhẹ gắn với một tiến trình chính
+    - Mỗi tiến trình nhẹ gắn với một luồng.
+
+Câu hỏi 4: 
+Bài toán này yêu cầu bạn so sánh thời gian đọc một tệp (file) của một máy chủ tập tin
+(file server) đơn luồng và một máy chủ đa luồng. Phải mất tổng cộng 15 ms để nhận 1 yêu cầu
+(request) và thực hiện quá trình xử lý, giả định rằng các dữ liệu cần thiết nằm ở bộ nhớ đệm
+trong bộ nhớ chính. Nếu cần thiết phải thực hiện một thao tác truy cập ổ đĩa thì cần thêm 75 ms,
+biết rằng việc phải thực hiện thao tác này có xắc suất là 1/3. Hỏi máy chủ có thể nhận bao nhiêu
+yêu cầu/giây trong 2 trường hợp: máy chủ là đơn luồng và máy chủ là đa luồng (ngoài luồng
+nhận và xử lý request, sẽ có thêm 1 luồng để truy cập ổ đĩa nếu cần thiết)? Giải thích.
+
+Câu hỏi 5: Hệ thống X chỉ định máy của user như server, trong khi các ứng dụng lại được coi như client. 
+Điều đó có vô lí không? Giải thích.
+
+Không vô lí:
+    - X - tức là X-Window.
+    - Quan điểm của X-Window:
+        - Các máy của user-terminal coi như X-server.
+        - Các máy application-server được coi như client.
+Giải thích: user-terminal phục vụ cho các application-server với vai trò như X-client.
+
+
+Câu hỏi 6: 
+Giao thức thiết kế cho hệ thống X-Window gặp phải vấn đề về tính mở rộng. Chỉ ra các giải
+pháp để giải quyết vấn đề đó?
+
+Câu hỏi 7: Với việc xây dựng một server đồng thời, hãy so sánh việc server này tạo một luồng
+mới và tạo một tiến trình mới khi nhận được yêu cầu từ phía client.
+So sánh đa luồng đa tiến trình:
+
++-------------------------------------------+-----------------------------------------------+
+|               Đa luồng                    |                   Đa tiến trình               |
++-------------------------------------------+-----------------------------------------------+
+|                              Xử lí song song nhiều công việc.                             |
++-------------------------------------------+-----------------------------------------------+
+| - Chi phí lập trình cao.                  | - Chi phí lập trình ít.                       |
+| - Lập trình viên phải tự đảm bảo vấn đề   | - Không cần quan tâm xung đột giữa các tiến trình
+|   xung đột giữa các luồng.                |   mỗi tiến trình được tạo có tài nguyên riêng |
+|                                           |   có môi trường riêng. Hệ điều hành đảm bảo.  |
+|                                           |   không để xảy ra xung đột.                   |
+| - Nhẹ nhàng chuyển đổi ngữ cảnh.          | - Chuyển đổi ngữ cảnh giữa các tiến trình chậm|
+|                                           |   và tốn kém tài nguyên hơn do hệ điều hành   |
+|                                           |   tách riêng tài nguyên.                      |
++-------------------------------------------+-----------------------------------------------+
+| - n luồng chạy nhanh hơn n tiến trình chạy song song do việc chuyển ngữ cảnh nhanh hơn.   |
++-------------------------------------------+-----------------------------------------------+
+    
+
+Câu hỏi 8: 
+Nếu bây giờ một webserver tổ chức lưu lại thông tin về địa chỉ IP của client và trang
+web client đó vừa truy cập. Khi có 1 client kết nối với server đó, server sẽ tra xem trong bảng
+thông tin, nếu tìm thấy thì sẽ gửi nội dung trang web đó cho client. Server này là có trạng thái
+(stateful) hay không trạng thái (stateless)?
+
+Câu hỏi 9: 
+So sánh Docker và Virtual Machine. 
+Các máy ảo và các container khác nhau theo một số cách, nhưng sự khác biệt chính là các container
+ cung cấp mức độ ảo hóa HĐH để nhiều ứng dụng có thể chạy trên chỉ một thực thể HĐH (OS instance).
+  Với máy ảo, phần cứng đang được ảo hóa để chạy nhiều phiên bản HĐH. Tốc độ, sự linh hoạt và 
+  tính di động của các container khiến chúng trở thành một công cụ mới giúp hợp lý hóa việc phát
+ triển phần mềm.
