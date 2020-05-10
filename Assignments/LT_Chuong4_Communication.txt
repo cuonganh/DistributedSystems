@@ -39,17 +39,25 @@ Tham chiếu thì mỗi máy có không gian nhớ khác nhau, địa chỉ máy
 
 Câu 7:
 So sánh RMI và RPC:
-- Giống:
-    - Cùng hỗ trợ lập trình giao diện.
-    - Dựa trên giao thức yêu cầu/trả lời.
-    - Mức độ trong suốt.
-- Khác nhau:
-    - Có thể khai thác hết điểm mạnh của OOP.
-    - Định danh duy nhất, truyền đối tượng.
-Nhược điểm cần giải quyết một số vấn đề như:
-    - Định vị đối tượng từ xa.
-    - Trao đổi thông tin các đối tượng.
-    - Gọi các phương thức của đối tượng.
++-------------------------------------------+-----------------------------------------------+
+|                    RMI                    |                       RPC                     |
++-------------------------------------------+-----------------------------------------------+
+|                          - Cùng hỗ trợ lập trình giao diện.                               |
+|                          - Dựa trên giao thức request/reply.                              |
+|                          - Trong suốt, client và server hoàn toàn độc lập.                |
++-------------------------------------------+-----------------------------------------------+
+| Đặc điểm:                                 | Đặc điểm:                                     |
+| - Đơn giản, dễ sử dụng, độ tin cậy cao.   | - Đơn giản hóa việc lập trình.                |
+| - Định danh duy nhất, truyền đối tượng.   | - RPC có tính mở, không đồng bộ.              |
+| - Có thể khai thác hết điểm mạnh của OOP. | - Giao diện thống nhất giữ server và client.  |
+| - Chỉ sử dụng cho Java.                   | - Sử dụng đa nền tảng.                        |
++-------------------------------------------------------------------------------------------+
+| Vấn đề:                                   | Vấn đề:                                       |
+| - Hệ thống không đồng nhất.               | - Định vị đối tượng từ xa.                    |
+|   + Không gian nhớ khác nhau.             | - Trao đổi thông tin các đối tượng.           |
+|   + Cách biểu diễn thông tin khác nhau.   | - Gọi các phương thức của đối tượng.          |
+| - Khi một trong hai máy bị hỏng.          |                                               |
++-------------------------------------------+-----------------------------------------------+
 
 Câu 8:
 Ý nghĩa của tham số backlog trong hàm listen của TCPServer:
@@ -59,3 +67,5 @@ có thể chứa các kết nối ở hai trạng thái khác nhau: SYN RECEIVED
 Câu 9: 
 Cơ chế thực thi QoS không can thiệp được hạ tầng mạng.
 Cơ chế thực hiện từ tầng giao vận trở lên, tức là từ tầng IP đến tầng ứng dụng.
+
+
