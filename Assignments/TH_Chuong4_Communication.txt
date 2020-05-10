@@ -1,0 +1,81 @@
+Họ tên SV: Trần Văn Cường	Mã lớp: 114175
+MSSV: 20158056				Mã HP: IT4610Q
+
+Câu hỏi 1: 
+Đoạn code mà Server gán correlationID vào câu trả lời:
+
+channel.basicPublish("", delivery.getProperties().getReplyTo(), replyProps, response.getBytes("UTF-8"));
+
+Câu hỏi 2: 
+Đoạn code mà Client gửi yêu cầu lên cho Server thông qua hàng đợi rpc_queue và tạo ra một hàng đợi 
+mới để chờ câu trả lời của Server:
+    channel.basicPublish("", requestQueueName, props, message.getBytes("UTF-8")); 
+    final BlockingQueue response = new ArrayBlockingQueue<>(1);
+
+Câu hỏi 3: 
+Bây giờ hãy thử thêm một chút delay vào chương trình Server bằng cách thêm vào đoạn code sau 
+ở dưới dòng: 
+    response += fib(n); 
+    try { 
+        Thread.sleep(2000); 
+    }catch (InterruptedException _ignored) { 
+        Thread.currentThread().interrupt(); 
+    } 
+Chương trình Server sẽ ngủ 2000ms hay 2s đối với mỗi request. 
+Dịch lại chương trình Server và chạy nó. Mở cùng lúc nhiều cửa sổ command và chạy nhiều chương 
+trình Client trên đó cùng lúc. Cùng lúc đó mở một cửa sổ command khác và chạy dòng lệnh sau: 
+    >rabbitmqctl.bat list_queues name messages_ready messages_unacknowledged 
+Kết quả:
+Timeout: 60.0 seconds ...
+Listing queues for vhost / ...
+name messages_ready messages_unacknowledged
+amq.gen-rvEPKwGFoa1HLCTKszanlQ  0       0
+amq.gen-Oc5NLLapQDMzYeBCooNCYw  0       0
+amq.gen-WkN7EVDAaiyF37I3wGzTvg  0       0
+amq.gen-nvAJMFhrRzoNVBjrqmiWHA  0       0
+rpc_queue       3       1
+
+Lệnh trả về bảng thông tin các queue:
+-name: tên queue
+- messages_ready : số thông điệp sẵn sàng để gửi cho client
+- messages_unacknowledged: số thông điệp đã gửi nhưng chưa nhận được phản hồi ACK
+
+Câu hoi 4:
+Địa chỉ IP của hai máy:
+    IPServer: 10.0.2.15
+    IPClient: 10.0.2.4
+Hai máy ping nhau bằng lệnh:
+    ping <server_ip>
+    ping <client_ip>
+
+Câu hỏi 5: 
+Bạn đã xem được video trên máy client chưa?
+    Xem được.
+Đánh giá chất lượng video mà bạn xem trên máy client.
+    Chất lượng không tốt (bufer, mute, ...).
+
+Câu hỏi 6: 
+Độ trễ đã tăng 100ms.
+
+Câu hỏi 7: 
+Tắt chức năng sử dụng bộ đệm ở máy Client. Chất lượng của video nhận được ở máy Client tốt hơn.
+Delay ảnh hưởng tới dịch vụ truyền dòng video làm trải nghiệm xem video.
+
+Câu hỏi 8: 
+Ảnh hưởng của độ biến đổi delay lên chất lượng dịch vụ truyền video có thể làm chất lượng tốt hơn.
+
+Câu hỏi 9: 
+Độ ảnh hưởng của packet loss lên chất lượng dịch vụ truyền video: 
+Khi tăng giá trị của tỷ lệ mất gói tin lên chất lượng video giảm và bufer nhiều hơn.
+
+Câu hỏi 10: 
+Ảnh hưởng của việc biến đổi packet loss lên chất lượng dịch vụ truyền video: 
+Khi tăng giá trị của tỷ lệ mất gói tin lên thì không xem được toàn bộ video.
+
+Câu hỏi 11: 
+Ảnh hưởng của việc lặp gói tin lên chất lượng dịch vụ truyền video:
+Khi tăng giá trị của tỷ lệ lặp gói tin chất lượng video tốt hơn.
+
+Câu hỏi 12: 
+Ảnh hưởng của việc đảo thứ tự gói tin lên chất lượng dịch vụ truyền video:
+Không gây ảnh hưởng nhiều tới chất lượng dịch vụ.

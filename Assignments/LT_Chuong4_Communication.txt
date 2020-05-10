@@ -1,0 +1,61 @@
+Họ tên SV: Trần Văn Cường	Mã lớp: 114175
+MSSV: 20158056				Mã HP: IT4610Q
+
+Câu 1:
+Không nên làm như thế. Việc tách mỗi tâng có 1 header riêng để đảm bảo trong suốt cho các tầng.
+Thế nên mới phải có header riêng. Nếu dùng chung sẽ mất đi tính trong suốt giữa các tầng.
+
+Câu 2:
+Giá trị của i sau lời gọi incr(i, j):
+- Lời gọi tham chiếu: i = 2.
+- Phương pháp sao chép phục hồi sử dụng: i = 1.
+
+Câu 3:
+Một kết nối socket cần 4 thông tin:
+    - IP của hai máy.
+    - Port number của hai máy.
+Phải cần sử dụng đầy đủ 4 thông tin đó để đảm bảo thông tin được truyền đúng và tới nơi.
+
+Câu 4:
+Giao thức yêu cầu - trả lời là tin cậy và đồng bộ bởi vì:
+- Không cần báo nhận.
+- Không cần kiểm soát luồng.
+- Client gửi request, nó sẽ tự block mình và đợi phản hồi từ server.
+- Server tiếp nhận phản hồi từ client và gửi lại cho client.
+- Sau khi client tiếp nhận trả lời từ server nó mới tiếp tục làm việc khác.
+
+Câu 5: 
+Hai vấn đề chính đối với giao thức RPC:
+- Hệ thống không đồng nhất:
+    - Không gian nhớ khác nhau.
+    - Cách biểu diễn thông tin khác nhau.
+- Khi một trong hai máy bị hỏng.
+
+Câu 6:
+Tham biến trong RPC là hệ thống không đồng nhất nên phải có cơ chế biểu diễn dữ liệu khác nhau
+nên không hiểu nhau.
+Tham chiếu thì mỗi máy có không gian nhớ khác nhau, địa chỉ máy này đưa cho máy kia nên không có ý nghĩa gì.
+=> Giải pháp: sử dụng interface.
+
+Câu 7:
+So sánh RMI và RPC:
+- Giống:
+    - Cùng hỗ trợ lập trình giao diện.
+    - Dựa trên giao thức yêu cầu/trả lời.
+    - Mức độ trong suốt.
+- Khác nhau:
+    - Có thể khai thác hết điểm mạnh của OOP.
+    - Định danh duy nhất, truyền đối tượng.
+Nhược điểm cần giải quyết một số vấn đề như:
+    - Định vị đối tượng từ xa.
+    - Trao đổi thông tin các đối tượng.
+    - Gọi các phương thức của đối tượng.
+
+Câu 8:
+Ý nghĩa của tham số backlog trong hàm listen của TCPServer:
+Backlog thường được mô tả là giới hạn cho hàng đợi các kết nối đến. Điều này có nghĩa là hàng đợi 
+có thể chứa các kết nối ở hai trạng thái khác nhau: SYN RECEIVED and ESTABLISHED.
+
+Câu 9: 
+Cơ chế thực thi QoS không can thiệp được hạ tầng mạng.
+Cơ chế thực hiện từ tầng giao vận trở lên, tức là từ tầng IP đến tầng ứng dụng.
