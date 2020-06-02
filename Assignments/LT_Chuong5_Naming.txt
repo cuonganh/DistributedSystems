@@ -1,0 +1,116 @@
+Họ tên SV: Trần Văn Cường	Mã lớp: 114175
+MSSV: 20158056		        Mã HP: IT4610Q
+
+
+Câu 1: 
+Tại sao không thể lấy địa chỉ của Access Point để sử dụng như địa chỉ của thực thể?
+==>Vì thông tin có thể di chuyển từ Access point này sang Access point khác.
+
+
+Câu 2: 
+Với việc sử dụng Định Danh, các vấn đề gì cần phải xem xét?
+Vấn đề:
+    - Không gian định danh hữu hạn.
+    - Cạn kiệt định danh.
+Giải pháp:
+    - Sử dụng lại.
+    - Có khả năng bị trùng lặp.
+
+
+Câu 3: 
+Mô hình kết hợp cả dịch vụ tổ chức vị trí phân cấp và cơ chế chuyển tiếp con trỏ (forwarding pointers) 
+để có thể xác định được vị trí của thực thể khi nó ở các nút trung gian.
+- Khi thông tin dịch chuyển vị trí trung gian A và B, để lại con trở khi đến B ghi thêm địa chỉ mới đó ==> Mô hình phân cấp.
+- Chuỗi con trỏ trung gian và địa chỉ A đều bị xóa.
+
+
+Câu 4:
+Một số phương pháp ARP Spoofing để thấy được điểm yếu của phương pháp định danh sử dụng cơ chế quảng bá.
+ARP Spoofing:
+    - Kẻ tấn công gửi gói tin ARP giả qua mạng LAN.
+    - Swicth sẽ cập nhật địa chỉ MAC của kẻ tấn công với IP của user hoặc server chính thống.
+    - Swicth chuyển gói tin đến kẻ tấn công do nhận định đó là MAC của user.
+=> Kẻ tấn công có thể lấy thông tin từ gói tin.
+Một số phương pháp ARP Spoofing:
+- Man-in-the-middle.
+- MAC Spoofing.
+- Session Hijacking.
+- Nghe trộm, chặn bắt gói tin.
+...
+
+
+Câu 5:
+Vấn đề còn tồn tại đối với cơ chế chuyển tiếp con trỏ (Forwarding Pointer):
+- Chuỗi dài vô hạn:
+    - Giải pháp: sử dụng các shortcut. 
+    - Có khả năng có chuỗi không tham chiếu được.
+- Lưu trữ vô số các tham chiếu:
+    - Giải pháp: loại bỏ các tham chiếu.
+    - Bài toán toàn cục.
+==> Giả pháp Home-based.
+
+
+Câu 6:
+Nhược điểm của giải pháp Home-based: Vấn đề quy mô.
+    - Mỗi thực thể gắn với một home-agent.
+    - Mỗi khi di chuyển sẽ tự động cập nhật home-agent.
+    - Khi thực thể di chuyển đủ xa home-agent và đủ lâu, nó sẽ được gán bằng home-agent mới gần nó hơn.
+ Giải pháp:
+    - 
+
+
+Câu 7:
+Giải pháp sử dụng hàm băm phân tán vào hệ thống Chord:
+- Thiết lập vòng bằng các biến cục bộ prev(n) và succ(n).
+- Sử dụng bảng băm để xác định địa chỉ succ(k) của tên k.
+    - Xét theo vòng, chiều kim đồng hồ.
+    - Giá trị nằm giữa hai khóa liên tiếp nào thì chọn khóa bé hơn.
+    - Sau khi không chọn được ở giữa nào nữa thì đi thẳng tới khóa k.
+    - Ở các vòng tiếp theo, "độ lớn" xếp theo thứ tự (ví dụ 1 > 28).
+
+
+Câu 8:
+Sử dụng cơ chế bộ đệm trong giải pháp phân cấp:
+    - Các kết quả được lưu lại vào cache.
+    - Lần tới có thể truy suất ngay mà không cần tính toán, tìm kiếm, ...
+Ví dụ: bài toán tìm kiếm.
++-------------------------------------------+-----------------------------------------------+
+|            Không sử dụng cache            |                  Sử dụng cache                |
++-------------------------------------------------------------------------------------------+
+| - Đi từ lá -> node cha -> root -> xuống   | - Đi từ lá -> node cha -> root -> xuống       |
+| - Tới khi tìm thấy thì dừng.              | - Tới khi tìm thấy thì dừng.                  |
+| - Không lưu trữ kết quả.                  | - Lưu kết quả tìm được vào cache.             |
+| - Lần tới lặp lại các bước như trên tới   | - Lần tới truy suất ngay kết quả thay vì tìm  |
+|   khi tìm thấy.                           |   lại từ đầu.                                 |
++-------------------------------------------+-----------------------------------------------+
+
+
+
+Câu 9:
+So sánh liên kết vật lý và liên kết biểu tượng trong hệ thống quản lý tệp của UNIX
++-------------------------------------------+-----------------------------------------------+
+|       Liên kết vật lí (hard link)         |        Liên kết biểu tượng (soft link)        |
++-------------------------------------------------------------------------------------------+
+| - Một liên kết vật lí là một quan hệ giữa | - Khi tạo liên kết biểu tượng, một inode mới  |
+|   tên tệp trong thư mục với một inode.    |   được tạo ra.                                |
+| - Có thể nhiều liên kết vật lí - 1 inode. | - Inode này chứa tên của phần tử được trỏ tới.|                                               |
+| - Liên kết cuối cùng tới inode bị xóa thì | - Khi xóa một file, các file khác không ảnh   |
+|   các khối liên quan tới inode cũng bị xóa|   hưởng.                                      |
++-------------------------------------------------------------------------------------------+
+
+
+Câu 10:
+- Không cần phải cập nhật toàn bộ các mảng finger, chỉ cần cập nhật cho nút sau và nút trước
+Vì trong hệ thống Chord, mỗi nút sẽ quản lí khóa của nút trước đó.
+
+
+Câu 11:
+Ưu điểm của phân giải đệ quy so với phân giải không đệ quy:
++-------------------------------------------+-----------------------------------------------+
+|          Phân giải tên có đệ quy          |           Phân giải tên không đệ quy          |
++-------------------------------------------------------------------------------------------+
+| - Xử lí nhiều ở bên server.               | - Xử lí nhiều ở bên client.                   |
+| - Các name server tổ chức lưu trữ cache   | - Nếu client ở xa độ trễ tăng do việc gửi đi  |
+|   + Server lưu trữ kết quả.               |   gửi lại                                     |
+|   + Có thể trả lời nhanh cho client.      |                                               |
++-------------------------------------------+-----------------------------------------------+
