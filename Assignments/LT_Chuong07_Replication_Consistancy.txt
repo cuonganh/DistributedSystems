@@ -1,0 +1,56 @@
+Họ tên SV: Trần Văn Cường	Mã lớp: 114175
+MSSV: 20158056		        Mã HP: IT4610Q
+
+Câu 1:
+Phải sao lưu dữ liệu để:
+    - Tăng sự sẵn sàng của hệ thống khi có bản bị treo
+    - Có thể lựa chọn bản sao gần nhất để phục vụ
+    - Có thể phân tải cho các bản sao để tăng hiệu năng
+
+Câu 2: 
+Xét kho dữ liệu phân tán với 5 tiến trình độc lập:
+
++-------+----------+-----------+-----------+-----------+-----------+-----------+-----------+
+|       |  t1      |  t2       |    t3     |      t4   |    t5     |      t6   |     t7    |
++-------+----------+-----------+-----------+-----------+-----------+-----------+-----------+
+|  P1:  |   W(x)a  |           |           |           |           |           |           |
++-------+----------+-----------+-----------+-----------+-----------+-----------+-----------+
+|  P2:  |          |           |   W(x)b   |           |           |           |           |
++-------+----------+-----------+-----------+-----------+-----------+-----------+-----------+
+|  P3:  |          |   R(x)a   |   W(x)c   |           |           |           |           |
++-------+----------+-----------+-----------+-----------+-----------+-----------+-----------+
+|  P4:  |          |           |           |           |    R(x)a  |   R(x)b   |   R(x)c   |
++-------+----------+-----------+-----------+-----------+-----------+-----------+-----------+
+|  P5:  |          |           |           |   R(x)b   |    R(x)a  |           |   R(x)c   |
++-------+----------+-----------+-----------+-----------+-----------+-----------+-----------+
+
+a) Mô hình trên có thoả mãn thống nhất nhân quả. 
+Ở tiến trình P3 thực hiện R(x)a và W(x)c nên hai tiến trình W(x)a và W(x)c có khả năng phụ thuộc.
+Hai thao tác ghi có khả năng phụ thuộc nhân quả. Ở tiến trình P4 và P5 điều đó đã thể hiện thứ tự
+R(x)a và R(x)c như nhau.
+
+b) Mô hình trên không thoả mãn thống nhất tuần tự.
+Ở tiến trình P4 và P5 việc đọc R(x)a, R(x)b và R(x)c không được thống nhất theo thứ tự.
+
+Câu 3:
+Connit là định nghĩa độ không thống nhất. Tập đơn vị dữ liệu phân tán. 
+    - Connit lớn: Làm tăng số lần cập nhật, chi phí quản lí bản sao lớn.
+    - Connit nhỏ: Làm giảm số lần cập nhật, dẫn tới dữ liệu sai lệch cao.
+
+Câu 4: 
+Thống nhất nhân quả có tính thống nhất yếu hơn thống nhất tuần tự bởi vì:
+    - Thống nhất nhân quả: Chỉ đảm bảo thứ tự cho các sự kiện có quan hệ nhân quả.
+    - Thống nhất tuần tự: Kết quả luôn như nhau nếu thứ tự các thao tác cục bộ của 
+    một tiến trình không thay đổi trong thứ tự thực hiện chung trên kho dữ liệu
+Ví dụ: 
+    Nếu tiến trình P1 thực hiện W(x)a, P2 thực hiện W(X)b
+    Thì việc tiến trình P3 và P4 thực hiên R(x)a trước hay R(x)b trước đều được đối với nhân quả
+    còn với thống nhất tuần tự thì không, chỉ có thể R(x)b trước rồi tới R(x)a theo thời gian.
+
+Câu 5: 
+Vấn đề của mô hình Eventual Consistency: Nếu tiến trình khách truy cập vào các bản sao khác nhau 
+tính thống nhất không được đảm bảo.
+Định nghĩa mô hình thống nhất hướng client: 
+- Cung ứng đảm bảo thống nhất cho các truy cập của một client đơn vào kho dữ liệu. 
+- Không đảm bảo thống nhất cho các truy cập cạnh tranh của các tiến trình khác.
+
