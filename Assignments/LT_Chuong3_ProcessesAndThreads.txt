@@ -1,5 +1,5 @@
-Họ tên SV: Trần Văn Cường	Mã lớp: 114175
-MSSV: 20158056				Mã HP: IT4610Q
+Mã lớp: 114175
+Mã HP: IT4610Q
 
 Câu hỏi 1: Có cần thiết phải giới hạn số lượng các luồng trong một tiến trình server?
 Cần giới hạn:
