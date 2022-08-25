@@ -1,5 +1,5 @@
 Mã lớp: 114175
-Mã HP: IT4610Q
+Mã HP: IT4610
 
 Câu hỏi 1: Có cần thiết phải giới hạn số lượng các luồng trong một tiến trình server?
 Cần giới hạn:
