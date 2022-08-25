@@ -1,5 +1,5 @@
 Mã lớp: 114175
-Mã HP: IT4610Q
+Mã HP: IT4610
  
 Câu 1: Mô hình kiến trúc phân tầng OSI của mạng máy tính:
 
