@@ -1,5 +1,5 @@
 Mã lớp: 114175
-Mã HP: IT4610Q
+Mã HP: IT4610
 
 Câu 1:
 Không nên làm như thế. Việc tách mỗi tâng có 1 header riêng để đảm bảo trong suốt cho các tầng.
